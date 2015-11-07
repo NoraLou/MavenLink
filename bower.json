@@ -4,8 +4,8 @@
     "dependencies": {
       "angular": "latest",
       "angular-route": "latest",
-      "angular-resource":"latest",
-      "todomvc-common": "latest"
+      "angular-resource":"latest"
+
     }
   },
   "vendor": {
