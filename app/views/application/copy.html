@@ -1,0 +1,66 @@
+!doctype html>
+<html ng-app= "myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>List/Notes_App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-controller = "mainController">
+    <div id = "drop-form">
+      <div ng-hide ="!dropped">
+        <form ng-controller="formController as form"
+          name = "todoAdd"
+          class= "container form"
+          ng-submit= "form.submit(todoAdd.$valid, formData)">
+          <div style = "">
+            <h2 style="">Add a List Item ...</h2>
+          </div>
+          <input type="text"
+            focus-on="dropped"
+            id= "textInput"
+            class="input-grey"
+            ng-model="formData.text"
+            name="todo"
+            placeholder = "Please enter a List Item ..."
+            required/>
+        </form>
+      </div>
+      <div id="peek">
+        <button class = "circle" id = "drop-button"
+          ng-click = "dropped = !dropped">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class = "container main">
+      <div ng-if= "!$storage.toDos.length">
+        <div>
+          <div class= "no-to-dos paddingtop">
+            <h3> Looks like you have nothing on your To Do list...</h3>
+            <h3> To add some Notes or To-do items click the button above.</h3>
+          </div>
+         </div>
+        <img src = "img/nojobsleft.svg" class="paddingtop">
+      </div>
+      <div ng-repeat = "todo in $storage.toDos" ng-class = "{paddingtop:$first}">
+        <div class = "todo-item">
+          <div>
+            <h4 ng-bind="todo.text | trimWords:10"></h4>
+            <i class="fa fa-trash" ng-click="destroyTodo(todo)"></i>
+          </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/directive/focusVisible.js"></script>
+    <script src="js/factory/todos.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filter/trimWords.js"></script>
+    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <script src="js/vendor/ngStorage.js"></script>
+  </body>
