@@ -21,6 +21,23 @@ module Api
         end
       end
 
-    end
+      def update
+        @todo = Todo.find(params[:id])
+        if @todo.update(todo_params)
+          respond_to do |format|
+            format.json { render :json => @todo}
+          end
+        end
+      end
+
+      def destroy
+        respond_with Todo.destroy(params[:id])
+      end
+
+    private
+      def todo_params
+        params.require(:todo).permit(:title, :completed)
+      end
+    end  #class
   end
 end
