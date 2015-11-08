@@ -102,6 +102,13 @@ input[type=text] {
   margin-top: 12px;
   margin-bottom: 10px; }
   input[type=text]:focus {
-    border: 2px solid #f9f36d; }
+    border: 2px solid #47CF73; }
+
+.completed {
+  background-color: whitesmoke;
+  color: grey;
+  text-decoration: line-through; }
+  .completed input[type=checkbox] {
+    color: grey; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,6 +2,8 @@
 /****Variables***********/
 
 $background:gainsboro;
+$completedBackground:#d6eceb;
+
 $headerColor : #b5e9f2;
 $focusColor: #f9f36d;
 $gold:#ffb94d;
@@ -149,9 +151,52 @@ input[type=text] {
   margin-top: 12px;
   margin-bottom: 10px;
   &:focus{
-    border:2px solid $focusColor;
+    border:2px solid $lightGreen;
   }
 }
+
+
+.completed{
+  background-color: whitesmoke;
+  color:grey;
+  text-decoration: line-through;
+    input[type = checkbox]{
+     color:grey;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

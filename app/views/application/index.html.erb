@@ -6,32 +6,35 @@
 
     <div class = "container" style = "height: 500px">
 
-      <div ng-repeat = "todo in todos track by $index" ng-class ="">
-        <div class = "todo-item">
+      <div ng-repeat = "todo in todos | filter:statusFilter track by $index" >
+        <div class = "todo-item"
+          ng-class="{completed:todo.completed}">
           <div>
             <input
               type="checkbox"
               ng-model="todo.completed"
               ng-click= "checkAndSave(todo)">
-            <h4 ng-bind="todo.title"></h4>
+            <h4 ng-bind="todo.title">
+            </h4>
             <i class="fa fa-times" ng-click="delete(todo)"></i>
-          <!--   add a confirm after this -->
           </div>
         </div>
       </div>
 
       <div class = "form-container">
-        <form ng-submit = "save(todo)">
+        <form name="" ng-submit = "save(todo)">
           <input type="text"
             class="input-grey"
             ng-model="todo.title"
             name="todo"
             placeholder= "what do you need todo?"
-            style = "">
-
+            required="">
           <button type = "submit">
             Add
           </button>
+         <!--  <div ng-show = "todo-form.$submitted || todo-form.todo.$touched">
+            <span ng-show = "todo-form.todo.$error.required"> Please enter a todo item </span>
+          </div> -->
         </form>
       </div>
       todos!!! {{todos}}
