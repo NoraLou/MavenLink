@@ -19,6 +19,11 @@ angular
       $scope.todo = new Todo();
     }
 
+    $scope.delete = function(todo){
+      Todo.delete(todo)
+      _.remove($scope.todos, todo)
+    }
+
 
 
 
