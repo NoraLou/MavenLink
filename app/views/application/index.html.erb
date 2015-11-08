@@ -18,10 +18,10 @@
       </div>
 
       <div class = "form-container">
-        <form ng-submit = "">
+        <form ng-submit = "save(todo)">
           <input type="text"
             class="input-grey"
-            ng-model=""
+            ng-model="todo.title"
             name="todo"
             placeholder= "what do you need todo?"
             style = "">
@@ -31,7 +31,7 @@
           </button>
         </form>
       </div>
-
+      todos!!! {{todos}}
     </div>
 
   </body>
