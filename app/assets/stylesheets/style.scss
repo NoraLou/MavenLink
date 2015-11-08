@@ -52,8 +52,10 @@ button {
   padding: 7px 20px;
   color: #555;
   letter-spacing: 2px;
-  margin: 0 2% 0 2%;
+  margin-top:12px;
+  float:right;
   border-radius: 15px;
+
   transition: background-color .5s ease;
   &:focus{
     outline:0;
@@ -121,16 +123,15 @@ header{
 }
 
 .form-container{
-  position:relative;
+  margin:auto;
   height: 62px;
   border-bottom: 2px solid #ddd;
-  margin: auto;
+  padding:0 40px 0 40px;
+  text-align: left;
 }
 
 form{
-  margin:auto;
   max-width: 650px;
-  padding:0 20px 0 20px;
 }
 
 
