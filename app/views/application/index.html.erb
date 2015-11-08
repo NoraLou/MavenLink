@@ -1,11 +1,38 @@
   <body ng-controller = "MainCtrl">
 
-    <header id = "header">
-      <h1>todos</h1>
+    <header>
+      <h1>To Do -></h1>
     </header>
 
-    <h1>Todos <br> {{todos}} </h1>
+    <div class = "container" style = "height: 500px">
 
-    <i class="fa fa-plus" style = "color:red;font-size:40px"></i>
+      <div ng-repeat = "todo in todos" ng-class ="">
+        <div class = "todo-item">
+          <div>
+            <input type="checkbox" id="cbox2" value="second_checkbox" >
+            <h4 ng-bind="todo.title"></h4>
+            <i class="fa fa-times" ng-click="destroyTodo(todo)"></i>
+          <!--   add a confirm after this -->
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-container">
+        <form ng-submit = "">
+          <input type="text"
+            class="input-grey"
+            ng-model=""
+            name="todo"
+            placeholder= "what do you need todo?"
+            style = "float:left">
+
+          <button type = "submit"
+            style = "margin-right : -20px">
+            Add
+          </button>
+        </form>
+      </div>
+
+    </div>
 
   </body>
