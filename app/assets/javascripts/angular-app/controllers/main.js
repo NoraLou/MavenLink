@@ -23,17 +23,8 @@ angular
       _.remove($scope.todos, todo)
     }
 
-    // $scope.updateTodo = function(todo){
-
-    // }
-
-    $scope.markComplete = function(todo){
-      todo.completed = done || !!(!todo.completed);
+     $scope.checkAndSave = function(todo) {
       $scope.save(todo);
-    }
-
-
-
-
+    };
 
   }]);

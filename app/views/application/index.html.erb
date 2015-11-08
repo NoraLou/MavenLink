@@ -6,15 +6,13 @@
 
     <div class = "container" style = "height: 500px">
 
-      <div ng-repeat = "todo in todos" ng-class ="">
+      <div ng-repeat = "todo in todos track by $index" ng-class ="">
         <div class = "todo-item">
           <div>
             <input
               type="checkbox"
-              ng-model="done"
-              ng-click="markComplete(todo)"
-              ng-checked = ''
-              value="true">
+              ng-model="todo.completed"
+              ng-click= "checkAndSave(todo)">
             <h4 ng-bind="todo.title"></h4>
             <i class="fa fa-times" ng-click="delete(todo)"></i>
           <!--   add a confirm after this -->
