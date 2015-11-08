@@ -9,7 +9,12 @@
       <div ng-repeat = "todo in todos" ng-class ="">
         <div class = "todo-item">
           <div>
-            <input type="checkbox" id="cbox2" value="second_checkbox" >
+            <input
+              type="checkbox"
+              ng-model="done"
+              ng-click="markComplete(todo)"
+              ng-checked = ''
+              value="true">
             <h4 ng-bind="todo.title"></h4>
             <i class="fa fa-times" ng-click="delete(todo)"></i>
           <!--   add a confirm after this -->
