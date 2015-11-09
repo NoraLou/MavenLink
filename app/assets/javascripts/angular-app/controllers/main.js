@@ -15,7 +15,9 @@ angular
       }else{
         Todo.update(todo);
       }
+
       $scope.todo = new Todo();
+      $scope.todoForm.$setPristine();
     }
 
     $scope.delete = function(todo){

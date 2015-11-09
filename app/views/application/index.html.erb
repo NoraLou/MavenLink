@@ -4,9 +4,10 @@
       <h1>To Do -></h1>
     </header>
 
-    <div class = "container" style = "height: 500px">
+    <div class = "container">
 
-      <div ng-repeat = "todo in todos | filter:statusFilter track by $index" >
+      <div ng-repeat = "todo in todos | filter:statusFilter track by $index"
+        ng-class = "{firstToDo:$first}">
         <div class = "todo-item"
           ng-class="{completed:todo.completed}">
           <div>
@@ -22,7 +23,7 @@
       </div>
 
       <div class = "form-container">
-        <form name="" ng-submit = "save(todo)">
+        <form name="todoForm" ng-submit = "save(todo)" >
           <input type="text"
             class="input-grey"
             ng-model="todo.title"
@@ -32,12 +33,14 @@
           <button type = "submit">
             Add
           </button>
-         <!--  <div ng-show = "todo-form.$submitted || todo-form.todo.$touched">
-            <span ng-show = "todo-form.todo.$error.required"> Please enter a todo item </span>
-          </div> -->
+
+          <div
+            class = "error"
+            ng-show = "todoForm.todo.$invalid && !todoForm.todo.$pristine"> Please enter a todo item
+          </div>
+
         </form>
       </div>
-      todos!!! {{todos}}
     </div>
 
   </body>
