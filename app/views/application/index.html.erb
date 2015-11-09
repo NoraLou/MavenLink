@@ -11,12 +11,15 @@
         <div class = "todo-item"
           ng-class="{completed:todo.completed}">
           <div>
-            <input
-              type="checkbox"
-              ng-model="todo.completed"
-              ng-click= "checkAndSave(todo)">
-            <h4 ng-bind="todo.title">
-            </h4>
+            <span class = "my-checkbox">
+              <input
+                id = "{{todo.id}}"
+                type="checkbox"
+                ng-model="todo.completed"
+                ng-click= "checkAndSave(todo)">
+            </span>
+            <label ng-bind="todo.title" for="{{todo.id}}">
+            </label>
             <i class="fa fa-times" ng-click="delete(todo)"></i>
           </div>
         </div>
