@@ -1,64 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,900,700);
-/****Variables***********/
 
 $background:gainsboro;
 $darkGray:#4e4e4e;
 $completedBackground:#d6eceb;
-
-
-
 $lightRed:#f95c5c;
 $lightGreen: #47CF73;
-$cardShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$raisedShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
-
-input[type="checkbox"] {
-    height: 20px;
-    width: 20px;
-    vertical-align: middle;
-    margin: 0 0.4em 0.4em 0;
-    -webkit-appearance: none;
-    background-color: white;
-    padding: 2px;
-    border: solid grey 2px;
-}
-
-
-input[type="checkbox"]:focus {
-    outline:none;
-}
-
-input[type="checkbox"]:checked {
-    border-color:rgba(0, 0, 0, 0.5);
-    background-color:gainsboro;
-}
-/* checkbox checked */
-input[type="checkbox"]:checked:before {
-  font-family: "FontAwesome", sans-serif;
-  font-weight:normal;
-  color:$darkGray;
-  /*fallback checkmark*/
-  content:'\2713';
-  /*font asset*/
-  content: "\f00c";
-  -webkit-margin-start: 0;
-  font-size: 18px;
-  margin-top: -10px;
-  margin-left: -2px;
-}
-
-
-
-/*****MixIns*****************/
-
-// @mixin media($queryString){
-//     @media #{$queryString} {
-//       @content;
-//     }
-// }
-
-/******ResetValues*******/
 
 * {
   box-sizing:border-box;
@@ -66,7 +12,6 @@ input[type="checkbox"]:checked:before {
   padding:0;
   list-style:none;
 }
-
 
 body{
   color: darkslategray;
@@ -77,39 +22,6 @@ body{
   font-size: 18px;
 }
 
-
-
-button {
-  border: .5px solid grey;
-  // box-shadow: 1px rgba(0, 0, 0, 0.5);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
-  background-color: gainsboro;
-  padding: 7px 20px;
-  color: #555;
-  letter-spacing: 2px;
-  margin-top:12px;
-  float:right;
-  border-radius: 15px;
-
-  transition: background-color .5s ease;
-  &:focus{
-    outline:0;
-  }
-  &:hover{
-    background-color:grey;
-    color:#fff;
-  }
-}
-
-
-
-
-
-
-/****Theme***********/
 
 header{
   width: 80%;
@@ -198,15 +110,6 @@ input[type=text] {
   }
 }
 
-
-.completed{
-  background-color: whitesmoke;
-  color:grey;
-    input[type = checkbox]{
-     color:grey;
-    }
-}
-
 .error{
   font-size: 14px;
   font-weight: 400;
@@ -216,6 +119,71 @@ input[type=text] {
 input.ng-dirty.ng-invalid{
   border:2px solid $lightRed;
 }
+
+button {
+  border: .5px solid grey;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  background-color: gainsboro;
+  padding: 7px 20px;
+  color: #555;
+  letter-spacing: 2px;
+  margin-top:12px;
+  float:right;
+  border-radius: 15px;
+
+  transition: background-color .5s ease;
+  &:focus{
+    outline:0;
+  }
+  &:hover{
+    background-color:grey;
+    color:#fff;
+  }
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    margin: 0 0.4em 0.4em 0;
+    -webkit-appearance: none;
+    background-color: white;
+    padding: 2px;
+    border: solid grey 2px;
+    &:focus{
+      outline:none;
+    }
+    &:checked{
+      border-color:rgba(0, 0, 0, 0.5);
+      background-color:gainsboro;
+    }
+    &:checked:before{
+      font-family: "FontAwesome", sans-serif;
+      font-weight:normal;
+      color:$darkGray;
+      /*fallback checkmark*/
+      content:'\2713';
+      /*font asset*/
+      content: "\f00c";
+      -webkit-margin-start: 0;
+      font-size: 18px;
+      margin-top: -10px;
+      margin-left: -2px;
+    }
+}
+
+.completed{
+  background-color: whitesmoke;
+  color:grey;
+    input[type = checkbox]{
+     color:grey;
+    }
+}
+
+
 
 
 
